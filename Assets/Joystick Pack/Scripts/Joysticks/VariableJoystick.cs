@@ -39,6 +39,7 @@ public class VariableJoystick : Joystick
             background.gameObject.SetActive(true);
         }
         base.OnPointerDown(eventData);
+        JoyStickManager.Instance.state = JoyStickManager.PlayerState.Walk;
     }
 
     public override void OnPointerUp(PointerEventData eventData)

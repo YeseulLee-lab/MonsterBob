@@ -4,21 +4,46 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private VariableJoystick joystick;
-
+    [Header("Player")]
     [SerializeField] private float speed;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Animator animator;
-
     private Rigidbody rb;
 
+    [Header("Player Control")]
+    private VariableJoystick joystick;
+
+    #region Unity Life Cycle
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        joystick = UIManager.Instance.joystick;
+        joystick = JoyStickManager.Instance.joystick;
+
+        JoyStickManager.Instance.state = JoyStickManager.PlayerState.Idle;
     }
 
     private void Update()
+    {
+        switch (JoyStickManager.Instance.state)
+        {
+            case JoyStickManager.PlayerState.Walk:
+                if (joystick != null)
+                    Move();
+                break;
+            case JoyStickManager.PlayerState.AttackSword:
+                Attack();
+                break;
+        }
+    }
+    #endregion
+
+    private void Attack()
+    {
+        animator.SetTrigger("isAttacking");
+        JoyStickManager.Instance.state = JoyStickManager.PlayerState.Idle;
+    }
+
+    private void Move()
     {
         float x = joystick.Horizontal;
         float y = joystick.Vertical;
@@ -37,10 +62,5 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = false;
         }
-    }
-
-    private void Attack()
-    {
-
     }
 }
