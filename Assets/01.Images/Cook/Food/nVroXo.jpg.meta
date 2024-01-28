@@ -1,0 +1,1272 @@
+fileFormatVersion: 2
+guid: c63f513a62c723748b1ee017a2ce5bda
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8328829599498449013
+    second: nVroXo_0
+  - first:
+      213: 5045384418517641021
+    second: nVroXo_1
+  - first:
+      213: -3375229147633065734
+    second: nVroXo_2
+  - first:
+      213: -8764671915374686917
+    second: nVroXo_3
+  - first:
+      213: -1270678671572079564
+    second: nVroXo_4
+  - first:
+      213: -1644936309946705164
+    second: nVroXo_5
+  - first:
+      213: -8625584048258320326
+    second: nVroXo_6
+  - first:
+      213: -1185011306306558708
+    second: nVroXo_7
+  - first:
+      213: -9095758885820686796
+    second: nVroXo_8
+  - first:
+      213: 2143157066950915847
+    second: nVroXo_9
+  - first:
+      213: -555899580857480202
+    second: nVroXo_10
+  - first:
+      213: 825214714828773644
+    second: nVroXo_11
+  - first:
+      213: -7720813067036125975
+    second: nVroXo_12
+  - first:
+      213: -7223491321732774358
+    second: nVroXo_13
+  - first:
+      213: 3763325593405506225
+    second: nVroXo_14
+  - first:
+      213: 5349498982635756268
+    second: nVroXo_15
+  - first:
+      213: -8028616888542909034
+    second: nVroXo_16
+  - first:
+      213: 3850269502145654746
+    second: nVroXo_17
+  - first:
+      213: 2377615164487063156
+    second: nVroXo_18
+  - first:
+      213: -31172881391229595
+    second: nVroXo_19
+  - first:
+      213: 2856969287934241610
+    second: nVroXo_20
+  - first:
+      213: 7766310278367099325
+    second: nVroXo_21
+  - first:
+      213: -3212001472686752364
+    second: nVroXo_22
+  - first:
+      213: -5645650874995698441
+    second: nVroXo_23
+  - first:
+      213: 2306303412494705279
+    second: nVroXo_24
+  - first:
+      213: 5731793586978751854
+    second: nVroXo_25
+  - first:
+      213: 7867033362992870299
+    second: nVroXo_26
+  - first:
+      213: -8486075138703166016
+    second: nVroXo_27
+  - first:
+      213: 2240023364094457760
+    second: nVroXo_28
+  - first:
+      213: 834525391295466901
+    second: nVroXo_29
+  - first:
+      213: 6440817381847253279
+    second: nVroXo_30
+  - first:
+      213: -2257143711219993484
+    second: nVroXo_31
+  - first:
+      213: -3995895056493321784
+    second: nVroXo_32
+  - first:
+      213: 7004955686884674279
+    second: nVroXo_33
+  - first:
+      213: 2220431671749692519
+    second: nVroXo_34
+  - first:
+      213: -726926515131386743
+    second: nVroXo_35
+  - first:
+      213: -202887603067218573
+    second: nVroXo_36
+  - first:
+      213: 831574926842308654
+    second: nVroXo_37
+  - first:
+      213: -6145871491415734473
+    second: nVroXo_38
+  - first:
+      213: 3408802027794926801
+    second: nVroXo_39
+  - first:
+      213: 7355595262359034321
+    second: nVroXo_40
+  - first:
+      213: 6120335448068902207
+    second: nVroXo_41
+  - first:
+      213: 368766777929289254
+    second: nVroXo_42
+  - first:
+      213: 2284276153920525917
+    second: nVroXo_43
+  - first:
+      213: 2933016512423534463
+    second: nVroXo_44
+  - first:
+      213: 95963362918623190
+    second: nVroXo_45
+  - first:
+      213: 4909471452775079453
+    second: nVroXo_46
+  - first:
+      213: 508514003827433196
+    second: nVroXo_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: nVroXo_0
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8fc2277b9d0a6c80800000000000000
+      internalID: -8328829599498449013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_1
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37e805a56ec40640800000000000000
+      internalID: 5045384418517641021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_2
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af069c319f6c821d0800000000000000
+      internalID: -3375229147633065734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_3
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3dcf378451ad5680800000000000000
+      internalID: -8764671915374686917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ce7450b74ad5ee0800000000000000
+      internalID: -1270678671572079564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_5
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fa1c7f24230c29e0800000000000000
+      internalID: -1644936309946705164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_6
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3879472205cb4880800000000000000
+      internalID: -8625584048258320326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_7
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 186
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05a6c0de7efd8fe0800000000000000
+      internalID: -1185011306306558708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_8
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e1e081c7f55c180800000000000000
+      internalID: -9095758885820686796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_9
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7073a795ff50ebd10800000000000000
+      internalID: 2143157066950915847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_10
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb8338c64c0948f0800000000000000
+      internalID: -555899580857480202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_11
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c095bc43960c37b00800000000000000
+      internalID: 825214714828773644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_12
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e41e121c692ad490800000000000000
+      internalID: -7720813067036125975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_13
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2640022ae001cb90800000000000000
+      internalID: -7223491321732774358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_14
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b2421130b40a3430800000000000000
+      internalID: 3763325593405506225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_15
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 151
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea515a5bfc3d3a40800000000000000
+      internalID: 5349498982635756268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_16
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69da2b03a7f949090800000000000000
+      internalID: -8028616888542909034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_17
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf69ec66b7ee6530800000000000000
+      internalID: 3850269502145654746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_18
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47655db156cfef020800000000000000
+      internalID: 2377615164487063156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565ec06fd60419ff0800000000000000
+      internalID: -31172881391229595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_20
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4b65853e6ef5a720800000000000000
+      internalID: 2856969287934241610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_21
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db9398dec0a77cb60800000000000000
+      internalID: 7766310278367099325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_22
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49d7972bdadac63d0800000000000000
+      internalID: -3212001472686752364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_23
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 116
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f4120ee07e96a1b0800000000000000
+      internalID: -5645650874995698441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_24
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f72a40efbb2a10020800000000000000
+      internalID: 2306303412494705279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_25
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e650bb526eb6b8f40800000000000000
+      internalID: 5731793586978751854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_26
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b93365d89215d2d60800000000000000
+      internalID: 7867033362992870299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_27
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5f25c5f976b3a80800000000000000
+      internalID: -8486075138703166016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_28
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7fc69a169261f10800000000000000
+      internalID: 2240023364094457760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_29
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dc5300c64d49b00800000000000000
+      internalID: 834525391295466901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_30
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f11ca2ca841626950800000000000000
+      internalID: 6440817381847253279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_31
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 81
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474b9b5e0c30da0e0800000000000000
+      internalID: -2257143711219993484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_32
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1e9f50e9abb88c0800000000000000
+      internalID: -3995895056493321784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_33
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ea0d18551a963160800000000000000
+      internalID: 7004955686884674279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_34
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76ccaa257de80de10800000000000000
+      internalID: 2220431671749692519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_35
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 984f7c79f2079e5f0800000000000000
+      internalID: -726926515131386743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_36
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37519d9ccc23f2df0800000000000000
+      internalID: -202887603067218573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_37
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e28ae867df85a8b00800000000000000
+      internalID: 831574926842308654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_38
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73707f6d07a75baa0800000000000000
+      internalID: -6145871491415734473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_39
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 46
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc0958326f7e4f20800000000000000
+      internalID: 3408802027794926801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_40
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9d4746be2541660800000000000000
+      internalID: 7355595262359034321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_41
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3dc060c9accfe450800000000000000
+      internalID: 6120335448068902207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_42
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ec0734e6f1e1500800000000000000
+      internalID: 368766777929289254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_43
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5614533f0163bf10800000000000000
+      internalID: 2284276153920525917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_44
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7f1c5f6afa24b820800000000000000
+      internalID: 2933016512423534463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_45
+      rect:
+        serializedVersion: 2
+        x: 216
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7673e8b2ee45100800000000000000
+      internalID: 95963362918623190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_46
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1e54995642f12440800000000000000
+      internalID: 4909471452775079453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nVroXo_47
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 11
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cee1271daca9e0700800000000000000
+      internalID: 508514003827433196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: ff8fbc226d0bd3f4bb4b02c2809e4aa9
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
