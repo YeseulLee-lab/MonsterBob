@@ -170,9 +170,10 @@ MonoBehaviour:
   monster:
     name: "\uADC0\uC5EC\uC6B4 \uC591"
     maxHealth: 20
-    tankDamage: 3
-    skillDamage: 9
-    loots: []
+    damage: 9
+    loots:
+    - sprite: {fileID: 7781951474801772793, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+      lootName: "\uC591\uACE0\uAE30"
   curHealth: 0
   strength: 1.5
   animator: {fileID: 8973617476862001084}

@@ -46,6 +46,5 @@ public class FieldUIManager : MonoBehaviour
 
     private void TimerUpdate()
     {
-
     }
 }

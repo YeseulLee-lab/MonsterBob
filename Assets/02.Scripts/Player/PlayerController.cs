@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Device;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Animator animator;
     private Rigidbody rb;
+    private bool isAttacking = false;
+
+    public bool IsAttacking
+    {
+        set { isAttacking = value; }
+    }
 
     [Header("Player Control")]
     private VariableJoystick joystick;
@@ -35,8 +42,14 @@ public class PlayerController : MonoBehaviour
         {
             case FieldUIManager.PlayerState.Walk:
 #if UNITY_EDITOR
+                if (UnityEngine.Device.Application.platform == RuntimePlatform.Android)
+                {
+                    if (joystick != null)
+                        Move();
+                }
+                else
                     Move();
-#elif UNITY_ANDROID
+#elif PLATFORM_ANDROID
                     if (joystick != null)
                         Move();
 #endif
@@ -68,6 +81,7 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
+        isAttacking = true;
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             return;
         animator.SetTrigger("isAttacking");
@@ -78,10 +92,22 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        if(isAttacking)
+            return;
+        float x;
+        float y;
 #if UNITY_EDITOR
-        float x = Input.GetAxis("Horizontal");
-        float y = Input.GetAxis("Vertical");
-#elif UNITY_ANDROID
+        if (UnityEngine.Device.Application.platform == RuntimePlatform.Android)
+        {
+            x = joystick.Horizontal;
+            y = joystick.Vertical;
+        }
+        else
+        {
+            x = Input.GetAxis("Horizontal");
+            y = Input.GetAxis("Vertical");
+        }
+#elif PLATFORM_ANDROID
 
         float x = joystick.Horizontal;
         float y = joystick.Vertical;

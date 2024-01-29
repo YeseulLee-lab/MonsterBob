@@ -67,9 +67,12 @@ MonoBehaviour:
   monster:
     name: "\uB3C5 \uC804\uAC08"
     maxHealth: 50
-    tankDamage: 5
-    skillDamage: 15
-    loots: []
+    damage: 15
+    loots:
+    - sprite: {fileID: -8876566217142947605, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+      lootName: "\uB78D\uC2A4\uD130"
+    - sprite: {fileID: -43059231089304595, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+      lootName: "\uB78D\uC2A4\uD130 \uC9D1\uAC8C"
   curHealth: 0
   strength: 1.5
   animator: {fileID: 7874539334444299900}

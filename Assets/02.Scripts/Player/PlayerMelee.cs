@@ -35,6 +35,8 @@ public class PlayerMelee : MonoBehaviour
         {
             enemy.GetComponent<MonsterPatrol>().GetDamaged(damage, transform.position, knockBackStrength);
         }
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<PlayerController>().IsAttacking = false;
     }
 
     public void Dead()
@@ -44,6 +46,7 @@ public class PlayerMelee : MonoBehaviour
 
     public void GetDamaged(float damage, Vector3 enemyDir, float strength)
     {
+        GetComponentInChildren<Animator>().SetTrigger("isDamaged");
         FieldUIManager.Instance.state = FieldUIManager.PlayerState.Damage;
 
         KnockBack(enemyDir, strength);
@@ -63,14 +66,5 @@ public class PlayerMelee : MonoBehaviour
     {
         Vector3 direction = (transform.position - enemyDir).normalized;
         GetComponent<Rigidbody>().AddForce(direction * strength, ForceMode.Impulse);
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            GetDamaged(collision.gameObject.GetComponent<MonsterPatrol>().TankDamage, collision.transform.position, collision.gameObject.GetComponent<MonsterPatrol>().Strength);
-            GetComponent<Animator>().SetTrigger("isDamaged");
-        }
     }
 }

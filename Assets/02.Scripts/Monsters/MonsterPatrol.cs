@@ -16,14 +16,6 @@ public class MonsterPatrol : MonoBehaviour
     [SerializeField] private float curHealth;
     [SerializeField] private float strength;
 
-    public float TankDamage
-    {
-        get
-        {
-            return monster.tankDamage;
-        }
-    }
-
     public float Strength
     {
         get
@@ -83,8 +75,7 @@ public class Monster
 {
     public string name;
     public float maxHealth;
-    public float tankDamage;
-    public float skillDamage;
+    public float damage;
     public Loot[] loots;
 }
 
