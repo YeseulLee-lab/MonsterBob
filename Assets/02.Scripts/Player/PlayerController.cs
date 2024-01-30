@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     private Rigidbody rb;
     private bool isAttacking = false;
+    private bool isDead = false;
 
     public bool IsAttacking
     {
@@ -26,21 +28,21 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerMelee = GetComponent<PlayerMelee>();
-        joystick = FieldUIManager.Instance.joystick;
+        joystick = UIManager.Instance.canvases[0].GetComponent<MainFieldCanvas>().joystick;
 
-        FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+        FieldManager.Instance.playerState = FieldManager.PlayerState.Idle;
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            FieldUIManager.Instance.state = FieldUIManager.PlayerState.AttackSword;
+            FieldManager.Instance.playerState = FieldManager.PlayerState.AttackSword;
         }
 
-        switch (FieldUIManager.Instance.state)
+        switch (FieldManager.Instance.playerState)
         {
-            case FieldUIManager.PlayerState.Walk:
+            case FieldManager.PlayerState.Walk:
 #if UNITY_EDITOR
                 if (UnityEngine.Device.Application.platform == RuntimePlatform.Android)
                 {
@@ -54,26 +56,26 @@ public class PlayerController : MonoBehaviour
                         Move();
 #endif
                 break;
-            case FieldUIManager.PlayerState.AttackSword:
+            case FieldManager.PlayerState.AttackSword:
                 Attack();
                 break;
-            case FieldUIManager.PlayerState.Idle:
+            case FieldManager.PlayerState.Idle:
 #if UNITY_EDITOR
                 if (Input.GetAxisRaw("Horizontal") != 0f || Input.GetAxisRaw("Vertical") != 0f)
                 {
-                    FieldUIManager.Instance.state = FieldUIManager.PlayerState.Walk;
+                    FieldManager.Instance.playerState = FieldManager.PlayerState.Walk;
                 }
 #endif
                 animator.SetFloat("deltaX", Mathf.Abs(rb.velocity.x));
                 animator.SetFloat("deltaY", Mathf.Abs(rb.velocity.z));
                 break;
-            case FieldUIManager.PlayerState.Dead:
-                animator.SetTrigger("isDead");
-                FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+            case FieldManager.PlayerState.Dead:
+                animator.SetBool("isDead", true);
+                //animator.enabled = false;
+                isDead = true;
                 break;
-            case FieldUIManager.PlayerState.Damage:
-                
-                FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+            case FieldManager.PlayerState.Damage:
+                FieldManager.Instance.playerState = FieldManager.PlayerState.Idle;
                 break;
         }
     }
@@ -87,12 +89,12 @@ public class PlayerController : MonoBehaviour
         animator.SetTrigger("isAttacking");
 
         playerMelee.Attack();
-        FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+        FieldManager.Instance.playerState = FieldManager.PlayerState.Idle;
     }
 
     private void Move()
     {
-        if(isAttacking)
+        if(isAttacking && isDead)
             return;
         float x;
         float y;
@@ -114,7 +116,7 @@ public class PlayerController : MonoBehaviour
 #endif
         if (x == 0 && y == 0)
         {
-            FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+            FieldManager.Instance.playerState = FieldManager.PlayerState.Idle;
         }
         Vector3 moveDir = new Vector3(x, 0, y);
         rb.velocity = moveDir * speed;

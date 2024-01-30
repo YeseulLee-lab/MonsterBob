@@ -39,7 +39,7 @@ public class VariableJoystick : Joystick
             background.gameObject.SetActive(true);
         }
         base.OnPointerDown(eventData);
-        FieldUIManager.Instance.state = FieldUIManager.PlayerState.Walk;
+        FieldManager.Instance.playerState = FieldManager.PlayerState.Walk;
     }
 
     public override void OnPointerUp(PointerEventData eventData)
@@ -48,7 +48,7 @@ public class VariableJoystick : Joystick
             background.gameObject.SetActive(false);
 
         base.OnPointerUp(eventData);
-        FieldUIManager.Instance.state = FieldUIManager.PlayerState.Idle;
+        FieldManager.Instance.playerState = FieldManager.PlayerState.Idle;
     }
 
     protected override void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
