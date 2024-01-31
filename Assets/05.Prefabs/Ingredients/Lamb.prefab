@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: -2096421195
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7781951474801772793, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+  m_Sprite: {fileID: -2462604582659173299, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -110,5 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bcbfa62c9c3364cb14aa5a979e1127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
-  name: 
+  loot:
+    sprite: {fileID: 0}
+    name: "\uC591\uACE0\uAE30"
+    desc: "\uADC0\uC5EC\uC6B4 \uC591\uC744 \uC7A1\uC544\uC11C \uC5BB\uC740 \uACE0\uAE30."
+    uid: 0
+  player: {fileID: 0}

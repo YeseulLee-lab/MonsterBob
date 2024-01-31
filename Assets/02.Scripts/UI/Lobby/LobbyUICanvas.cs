@@ -7,4 +7,5 @@ public class LobbyUICanvas : MonoBehaviour
 {
     public GameObject mapCanvas;
     public GameObject lobbyMenuCanvas;
+    public GameObject bagCanvas;
 }

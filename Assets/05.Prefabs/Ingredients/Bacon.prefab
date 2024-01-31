@@ -110,5 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bcbfa62c9c3364cb14aa5a979e1127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: -4631895070182396429, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
-  name: 
+  loot:
+    sprite: {fileID: 0}
+    name: "\uBCA0\uC774\uCEE8"
+    desc: "\uD754\uD55C \uC0BC\uACB9\uC0B4\uC774\uB2E4."
+  player: {fileID: 0}

@@ -566,10 +566,8 @@ MonoBehaviour:
     maxHealth: 30
     damage: 10
     loots:
-    - lootObject: {fileID: 4607141613187049774, guid: 1eb3d2c8f4bcf4a4d9a87cf621b03cfc, type: 3}
-      lootName: "\uAF43\uB4F1\uC2EC"
-    - lootObject: {fileID: 4072355843938808308, guid: 025be84de99fcde4ea6e69249d82e5eb, type: 3}
-      lootName: "\uBCA0\uC774\uCEE8"
+    - {fileID: 604787744375927556, guid: 1eb3d2c8f4bcf4a4d9a87cf621b03cfc, type: 3}
+    - {fileID: 6808853001498025147, guid: 025be84de99fcde4ea6e69249d82e5eb, type: 3}
   curHealth: 0
   strength: 1
   speed: 0.5

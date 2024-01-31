@@ -107,8 +107,8 @@ public class MonsterPatrol : MonoBehaviour
     private void DropLoots()
     {
         int count = monster.loots.Length;
-        monster.loots[UnityEngine.Random.Range(0, count - 1)].lootObject.GetComponent<Ingredient>().player = player.gameObject;
-        Instantiate(monster.loots[UnityEngine.Random.Range(0, count - 1)].lootObject, transform.position, Quaternion.identity);
+        monster.loots[UnityEngine.Random.Range(0, count - 1)].GetComponent<LootObject>().player = player.gameObject;
+        Instantiate(monster.loots[UnityEngine.Random.Range(0, count - 1)].gameObject, transform.position, Quaternion.identity);
     }
 
     private void KnockBack(Vector3 playerDir, float strength)
@@ -192,13 +192,5 @@ public class Monster
     public string name;
     public float maxHealth;
     public float damage;
-    public Loot[] loots;
-}
-
-[Serializable]
-public class Loot
-{
-    public GameObject lootObject;
-    public string lootName;
-    public float percentage;
+    public LootObject[] loots;
 }

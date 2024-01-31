@@ -9,7 +9,7 @@ public class LobbyMenuCanvas : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private Button playButton;
-    [SerializeField] private Button bookButton;
+    [SerializeField] private Button bagButton;
 
 
     private void Start()
@@ -17,6 +17,11 @@ public class LobbyMenuCanvas : MonoBehaviour
         playButton.onClick.AddListener(delegate
         {
             lobbyUICanvas.mapCanvas.SetActive(true);
+        });
+
+        bagButton.onClick.AddListener(delegate
+        {
+            lobbyUICanvas.bagCanvas.SetActive(true);
         });
     }
 }

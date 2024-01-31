@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MainFieldCanvas : MonoBehaviour
@@ -44,6 +45,7 @@ public class MainFieldCanvas : MonoBehaviour
             {
                 timerCount = 0;
                 isTimerOn = false;
+                SceneManager.LoadScene("02.Lobby");
             }
         }
     }

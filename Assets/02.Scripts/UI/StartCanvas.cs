@@ -18,6 +18,9 @@ public class StartCanvas : MonoBehaviour
 
     private void BackgroundStart()
     {
-        backgroundCV.DOFade(0f, 1.5f);
+        backgroundCV.DOFade(0f, 1.5f).OnComplete(() =>
+        {
+            LoadingManager.Instance.LoadNextScene("02.Lobby");
+        });
     }
 }

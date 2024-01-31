@@ -203,8 +203,7 @@ MonoBehaviour:
     maxHealth: 20
     damage: 6
     loots:
-    - lootObject: {fileID: 1123674720507300079, guid: e4c40fec0b5b0794e80ab91ab7f5fdfb, type: 3}
-      lootName: "\uC591\uACE0\uAE30"
+    - {fileID: 6855602316083173638, guid: e4c40fec0b5b0794e80ab91ab7f5fdfb, type: 3}
   curHealth: 0
   strength: 1
   speed: 0.5

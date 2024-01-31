@@ -1,12 +1,12 @@
 using DG.Tweening;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ingredient : MonoBehaviour
+public class LootObject : MonoBehaviour
 {
-    [SerializeField] private Sprite sprite;
-    [SerializeField] private string name;
+    public Loot loot;
 
     private float followSpeed = 0.35f;
     private float originScale;
@@ -16,7 +16,7 @@ public class Ingredient : MonoBehaviour
 
     private void Start()
     {
-        sprite = GetComponent<SpriteRenderer>().sprite;
+        loot.sprite = GetComponent<SpriteRenderer>().sprite;
         originScale = transform.localScale.x;
         transform.localScale = Vector3.zero;
         transform.DOScale(originScale, 0.3f).SetEase(Ease.InBounce).OnComplete(() =>
@@ -40,7 +40,17 @@ public class Ingredient : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            InventoryManager.Instance.GetLoots(loot);
             Destroy(gameObject);
         }
     }
+}
+
+[Serializable]
+public class Loot
+{
+    public Sprite sprite;
+    public string name;
+    public string desc;
+    public int uid;
 }

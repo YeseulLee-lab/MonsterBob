@@ -10,7 +10,11 @@ public class FieldManager : MonoBehaviour
     {
         if (Instance == null)
             Instance = this;
+
+        AudioManager.instance.PlayMusic(fieldAudioClip);
     }
+
+    [SerializeField] private AudioClip fieldAudioClip;
 
     public enum PlayerState
     {
