@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             return;
+        AudioManager.instance.PlaySound("CharacterAttack");
         animator.SetTrigger("isAttacking");
 
         playerMelee.Attack();

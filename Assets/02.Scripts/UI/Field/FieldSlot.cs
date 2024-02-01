@@ -10,7 +10,7 @@ public class FieldSlot : MonoBehaviour
     public Image itemImage;
     public Text itemCountText;
     public int itemCount;
-    public Loot loot;
+    public LootData loot;
 
     public UnityAction lobbyInvenSlotAction;
     public UnityAction fieldInvenSlotAction;

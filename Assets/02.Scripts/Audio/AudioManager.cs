@@ -48,7 +48,7 @@ public class AudioManager : MonoBehaviour
                 newSfxSource.transform.parent = transform;
             }
 
-            masterVolumePercent = PlayerPrefs.GetFloat("master vol", 1);
+            masterVolumePercent = PlayerPrefs.GetFloat("master vol", 0.8f);
             bgmVolumePercent = PlayerPrefs.GetFloat("bgm vol", 1);
             sfxVolumePercent = PlayerPrefs.GetFloat("sfx vol", 1);
         }

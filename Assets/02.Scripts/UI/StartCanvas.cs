@@ -11,9 +11,13 @@ public class StartCanvas : MonoBehaviour
     [SerializeField] private CanvasGroup backgroundCV;
     [SerializeField] private Button backgroundButton;
 
+    [SerializeField] private AudioClip startBGM;
+
     private void Start()
     {
         backgroundButton.onClick.AddListener(BackgroundStart);
+        AudioManager.instance.PlaySound("LogoPop");
+        AudioManager.instance.PlayMusic(startBGM, 0.5f);
     }
 
     private void BackgroundStart()

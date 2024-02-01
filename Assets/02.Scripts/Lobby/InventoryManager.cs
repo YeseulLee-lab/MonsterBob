@@ -37,17 +37,17 @@ public class InventoryManager : MonoBehaviour
     }
     #endregion
 
-    public Dictionary<Loot, int> lootInvenDic;
+    public Dictionary<LootData, int> lootInvenDic;
     [SerializeField] private int inventoryCapacity;
 
     public FieldInventory fieldInventory;
 
     private void Start()
     {
-        lootInvenDic = new Dictionary<Loot, int>();
+        lootInvenDic = new Dictionary<LootData, int>();
     }
 
-    public void GetLoots(Loot loot)
+    public void GetLoots(LootData loot)
     {
         if (lootInvenDic.Count >= inventoryCapacity)
         {
@@ -60,7 +60,7 @@ public class InventoryManager : MonoBehaviour
         }
         else
         {
-            foreach (KeyValuePair<Loot, int> pair in lootInvenDic)
+            foreach (KeyValuePair<LootData, int> pair in lootInvenDic)
             {
                 if (pair.Key.sprite.name == loot.sprite.name)
                 {

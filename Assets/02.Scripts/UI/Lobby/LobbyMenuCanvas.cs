@@ -16,11 +16,13 @@ public class LobbyMenuCanvas : MonoBehaviour
     {
         playButton.onClick.AddListener(delegate
         {
+            AudioManager.instance.PlaySound("OpenMap");
             lobbyUICanvas.mapCanvas.SetActive(true);
         });
 
         bagButton.onClick.AddListener(delegate
         {
+            AudioManager.instance.PlaySound("ButtonClick2");
             lobbyUICanvas.bagCanvas.SetActive(true);
         });
     }

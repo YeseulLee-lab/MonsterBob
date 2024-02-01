@@ -44,6 +44,7 @@ public class LoadingManager : MonoBehaviour
     public void LoadNextScene(string sceneName)
     {
         SceneManager.LoadScene("00.Loading");
+        Time.timeScale = 1;
         StartCoroutine(CoLoadScene(sceneName));
     }
 

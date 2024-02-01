@@ -234,7 +234,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a28f50be27332f4aab1c9b82d30910d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 1.2
   sr: {fileID: 2847582513974319973}
   animator: {fileID: 2847582513974319975}
 --- !u!114 &2847582513994621971
@@ -252,7 +252,7 @@ MonoBehaviour:
   attackPoint: {fileID: 2847582514144155539}
   attackRange: 0.5
   damage: 10
-  knockBackStrength: 2.5
+  knockBackStrength: 1.8
   playerMaxHealth: 100
   playerCurHealth: 0
   enemyLayers:

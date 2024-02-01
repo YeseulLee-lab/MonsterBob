@@ -21,8 +21,10 @@ public class MapCanvas : MonoBehaviour
     [SerializeField] private Text landName;
     [SerializeField] private Button cancelButton;
     [SerializeField] private Button enterButton;
+    [SerializeField] private MonsterPatrol[] monsters;
+    [SerializeField] private MonsterSlot[] monsterSlots;
 
-    private enum LandType
+    public enum LandType
     {
         forest, sky, sea
     }
@@ -37,6 +39,7 @@ public class MapCanvas : MonoBehaviour
     {
         backButton.onClick.AddListener(delegate
         {
+            AudioManager.instance.PlaySound("UIClose");
             transform.DOScale(0f, 0.5f).SetEase(Ease.OutExpo).OnComplete(() =>
             {
                 gameObject.SetActive(false);
@@ -45,15 +48,31 @@ public class MapCanvas : MonoBehaviour
 
         cancelButton.onClick.AddListener(delegate
         {
+            AudioManager.instance.PlaySound("UIClose");
             mapInfoPanel.transform.DOScale(0f, 0.3f).SetEase(Ease.OutExpo).OnComplete(() =>
             {
                 mapInfoBackground.SetActive(false);
             });
         });
 
-        forestLandButton.onClick.AddListener(() => SetMapInfoPanel(LandType.forest));
-        skyLandButton.onClick.AddListener(() => SetMapInfoPanel(LandType.sky));
-        seaLandButton.onClick.AddListener(() => SetMapInfoPanel(LandType.sea));
+        forestLandButton.onClick.AddListener(() => 
+        {
+            AudioManager.instance.PlaySound("ButtonClick3");
+            landType = LandType.forest;
+            SetMapInfoPanel(landType);
+        });
+        skyLandButton.onClick.AddListener(() =>
+        {
+            AudioManager.instance.PlaySound("ButtonClick3");
+            landType = LandType.sky;
+            SetMapInfoPanel(landType);
+        });
+        seaLandButton.onClick.AddListener(() =>
+        {
+            AudioManager.instance.PlaySound("ButtonClick3");
+            landType = LandType.sea;
+            SetMapInfoPanel(landType);
+        });
 
         enterButton.onClick.AddListener(OnClickEnter);
     }
@@ -72,12 +91,27 @@ public class MapCanvas : MonoBehaviour
                 landName.text = "바다의 땅\n~물고기와 해조류가 춤을 추는 곳~";
                 break;
         }
+
+        List<MonsterPatrol> landMonsters = new List<MonsterPatrol>();
+        foreach (MonsterPatrol monster in monsters)
+        {
+            if(monster.monster.landType == landType)
+                landMonsters.Add(monster);
+        }
+
+        for (int i = 0; i < landMonsters.Count; i++)
+        {
+            monsterSlots[i].gameObject.SetActive(true);
+            monsterSlots[i].monsterImage.sprite = landMonsters[i].monster.sprite;
+        }
+
         mapInfoBackground.SetActive(true);
         mapInfoPanel.transform.DOScale(1f, 0.3f).SetEase(Ease.InExpo);
     }
 
     private void OnClickEnter()
     {
+        //출발 효과음
         LoadingManager.Instance.LoadNextScene("04.Field");
     }
 }

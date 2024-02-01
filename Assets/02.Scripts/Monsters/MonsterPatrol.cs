@@ -18,19 +18,20 @@ public class MonsterPatrol : MonoBehaviour
 
     [Header("Patrol")]
     [SerializeField] private float speed;
-    [SerializeField] private Transform moveSpot;
+    private Vector3 moveSpot;
     [SerializeField] private float startWaitTime;
     private float waitTime;
-    [SerializeField] private float minX;
-    [SerializeField] private float maxX;
-    [SerializeField] private float minZ;
-    [SerializeField] private float maxZ;
+    public float minX;
+    public float maxX;
+    public float minZ;
+    public float maxZ;
 
 
     [Header("Attack")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float followRange;
     [SerializeField] private float attackRange;
+    [SerializeField] private GameObject damageEffect;
 
     [Header("--------------------")]
     [SerializeField] private Animator animator;
@@ -38,27 +39,22 @@ public class MonsterPatrol : MonoBehaviour
     private Rigidbody rigid;
     private PlayerController player;
 
-    public float Strength
-    {
-        get
-        {
-            return strength;
-        }
-    }
+    private bool isHurting = false;
+    
 
     private void Start()
     {
         waitTime = startWaitTime;
 
-        moveSpot.position = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
-        if (transform.position.x - moveSpot.position.x > 0)
+        moveSpot = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
+        if (transform.position.x - moveSpot.x > 0)
         {
             sr.flipX = false;
         }
         animator.SetBool("isWalking", true);
 
         rigid = GetComponent<Rigidbody>();
-        monsterName.text = monster.name;
+        monsterName.text = monster.monsterName;
         curHealth = monster.maxHealth;
         player = FindObjectOfType<PlayerController>();
 
@@ -67,6 +63,11 @@ public class MonsterPatrol : MonoBehaviour
 
     private void Update()
     {
+        if (Dead() || isHurting)
+        {
+            return;
+        }
+
         if (PlayerInSight())
         {
             Follow();
@@ -79,7 +80,11 @@ public class MonsterPatrol : MonoBehaviour
 
     public void GetDamaged(float damage, Vector3 playerDir, float strength)
     {
+        StartCoroutine(CoHurt());
+        
         animator.SetTrigger("isDamaged");
+        damageEffect.GetComponent<DamageEffectPopup>().damage = damage;
+        Instantiate(damageEffect, transform.position, Quaternion.identity);
         KnockBack(playerDir, strength);
 
         if (curHealth <= 0)
@@ -88,27 +93,51 @@ public class MonsterPatrol : MonoBehaviour
         }
 
         curHealth -= damage;
-        if (curHealth <= 0)
+
+        if (Dead())
         {
-            Dead();
+            DropLoots();
+            gameObject.SetActive(false);
+            AudioManager.instance.PlaySound("MonsterDeath2");
+            Destroy(gameObject, 1f);
         }
 
         healthBar.fillAmount = curHealth / monster.maxHealth;
         healthText.text = string.Format("{0} / {1}", curHealth, monster.maxHealth);
     }
 
-    private void Dead()
+    private IEnumerator CoHurt()
     {
-        animator.SetTrigger("isDead");
-        DropLoots();
-        Destroy(gameObject, 1f);
+        //½ºÅÏ
+        isHurting = true;
+        yield return new WaitForSeconds(1f);
+        isHurting = false;
+    }
+
+    private bool Dead()
+    {
+        if (curHealth <= 0)
+        {
+            animator.SetTrigger("isDead");
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
     private void DropLoots()
     {
-        int count = monster.loots.Length;
-        monster.loots[UnityEngine.Random.Range(0, count - 1)].GetComponent<LootObject>().player = player.gameObject;
-        Instantiate(monster.loots[UnityEngine.Random.Range(0, count - 1)].gameObject, transform.position, Quaternion.identity);
+        int randomNumber = UnityEngine.Random.Range(1, 101);
+        foreach (LootObject loot in monster.loots)
+        {
+            if (randomNumber <= loot.loot.dropChance)
+            {
+                loot.GetComponent<LootObject>().player = player.gameObject;
+                Instantiate(loot.gameObject, transform.position, Quaternion.identity);
+            }
+        }
     }
 
     private void KnockBack(Vector3 playerDir, float strength)
@@ -119,17 +148,17 @@ public class MonsterPatrol : MonoBehaviour
 
     private void Patrol()
     {
-        transform.position = Vector3.MoveTowards(transform.position, moveSpot.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, moveSpot, speed * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, moveSpot.position) < 0.2f)
+        if (Vector3.Distance(transform.position, moveSpot) < 0.2f)
         {
             if (waitTime <= 0)
             {
                 animator.SetBool("isWalking", true);
-                moveSpot.position = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
+                moveSpot = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
                 waitTime = startWaitTime;
 
-                if (transform.position.x - moveSpot.position.x > 0)
+                if (transform.position.x - moveSpot.x > 0)
                 {
                     sr.flipX = true;
                 }
@@ -172,7 +201,7 @@ public class MonsterPatrol : MonoBehaviour
         }
 
         player.GetComponent<PlayerMelee>().GetDamaged(monster.damage, transform.position, strength);
-        moveSpot.position = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
+        moveSpot = new Vector3(UnityEngine.Random.Range(minX, maxX), transform.position.y, UnityEngine.Random.Range(minZ, maxZ));
     }
 
     private bool PlayerInSight()
@@ -189,8 +218,10 @@ public class MonsterPatrol : MonoBehaviour
 [Serializable]
 public class Monster
 {
-    public string name;
+    public string monsterName;
+    public Sprite sprite;
     public float maxHealth;
     public float damage;
     public LootObject[] loots;
+    public MapCanvas.LandType landType;
 }

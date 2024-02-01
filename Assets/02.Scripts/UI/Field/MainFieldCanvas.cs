@@ -16,16 +16,22 @@ public class MainFieldCanvas : MonoBehaviour
 
     [Header("Menu")]
     [SerializeField] private Button menuButton;
-    [SerializeField] private GameObject menuPopup;
 
     [Header("Inventory")]
     [SerializeField] private RectTransform getItemTransform;
+    public Image backPackImage;
 
     private void Start()
     {
         attackButton.onClick.AddListener(delegate
         {
             FieldManager.Instance.playerState = FieldManager.PlayerState.AttackSword;
+        });
+
+        menuButton.onClick.AddListener(delegate
+        {
+            AudioManager.instance.PlaySound("ButtonClick2");
+            UIManager.Instance.canvases[2].SetActive(true);
         });
 
         isTimerOn = true;

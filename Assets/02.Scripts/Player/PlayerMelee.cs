@@ -37,7 +37,6 @@ public class PlayerMelee : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
         foreach (Collider enemy in hitEnemies)
         {
             enemy.GetComponent<MonsterPatrol>().GetDamaged(damage, transform.position, knockBackStrength);

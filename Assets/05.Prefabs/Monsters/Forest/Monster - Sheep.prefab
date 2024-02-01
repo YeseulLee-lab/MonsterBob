@@ -199,7 +199,8 @@ MonoBehaviour:
   healthBar: {fileID: 6182731663527620543}
   monsterName: {fileID: 6527264998418020141}
   monster:
-    name: "\uADC0\uC5EC\uC6B4 \uC591"
+    monsterName: "\uADC0\uC5EC\uC6B4 \uC591"
+    sprite: {fileID: -6367260613296689715, guid: 21b54993e94d60343a0106546da473c4, type: 3}
     maxHealth: 20
     damage: 6
     loots:
@@ -207,7 +208,6 @@ MonoBehaviour:
   curHealth: 0
   strength: 1
   speed: 0.5
-  moveSpot: {fileID: 0}
   startWaitTime: 3
   minX: -2.72
   maxX: -0.175
@@ -216,6 +216,7 @@ MonoBehaviour:
   attackPoint: {fileID: 1046525569479942801}
   followRange: 0.7
   attackRange: 0.4
+  damageEffect: {fileID: 2452045691475815555, guid: 8b4be493338d5a34da040a702f26dbb1, type: 3}
   animator: {fileID: 8973617476862001084}
   sr: {fileID: 8973617476862001085}
 --- !u!54 &4761784460998597660

@@ -36,7 +36,7 @@ public class BagCanvas : MonoBehaviour
             SetData();
             detailsObject.SetActive(true);
             invenEmptyObject.SetActive(false);
-            lootName.text = slots[0].loot.name;
+            lootName.text = slots[0].loot.lootName;
             description.text = slots[0].loot.desc;
             lootImage.sprite = slots[0].loot.sprite;
             if (InventoryManager.Instance.lootInvenDic.Count > slots.Length)
@@ -58,6 +58,7 @@ public class BagCanvas : MonoBehaviour
     {
         closeButton.onClick.AddListener(delegate
         {
+            AudioManager.instance.PlaySound("UIClose");
             transform.DOScale(0f, 0.5f).SetEase(Ease.OutExpo).OnComplete(() =>
             {
                 gameObject.SetActive(false);
@@ -68,7 +69,7 @@ public class BagCanvas : MonoBehaviour
     private void SetData()
     {
         int i = 0;
-        foreach (KeyValuePair<Loot, int> pair in InventoryManager.Instance.lootInvenDic)
+        foreach (KeyValuePair<LootData, int> pair in InventoryManager.Instance.lootInvenDic)
         {
             slots[i].loot = pair.Key;
             slots[i].itemImage.gameObject.SetActive(true);

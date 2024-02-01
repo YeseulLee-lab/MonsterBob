@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7b6a52a327e25d45bc3cdcd52c97474, type: 3}
+  m_Name: BaconLootData
+  m_EditorClassIdentifier: 
+  uid: 0
+  sprite: {fileID: -4631895070182396429, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+  lootName: "\uBCA0\uC774\uCEE8"
+  desc: "\uD754\uD558\uC9C0\uB9CC \uB9DB\uC788\uB294 \uB3FC\uC9C0\uACE0\uAE30\uC774\uB2E4."
+  dropChance: 70
