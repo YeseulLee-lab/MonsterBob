@@ -1013,11 +1013,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundGroups:
   - groupID: CharacterAttack
-    audioClip: {fileID: 8300000, guid: ab140ab4b3bffb14681d3d2691f76d67, type: 3}
+    audioClip: {fileID: 8300000, guid: e20b156d57bd5b743a5b73bd0419dd00, type: 3}
   - groupID: CharacterAttack2
-    audioClip: {fileID: 8300000, guid: f95af8d7c8ac7034e87fb62680274522, type: 3}
+    audioClip: {fileID: 8300000, guid: 377532e3f788f5c48944a455e48890a2, type: 3}
   - groupID: CharacterAttack3
-    audioClip: {fileID: 8300000, guid: 3cb2d52425e1316498ab1fd84a446ddc, type: 3}
+    audioClip: {fileID: 8300000, guid: 1c79f57cb21a4c9428a04d8172df342e, type: 3}
   - groupID: LogoPop
     audioClip: {fileID: 8300000, guid: 20216535b770533459c8a731e9693033, type: 3}
   - groupID: LowPop

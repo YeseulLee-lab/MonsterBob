@@ -195,6 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cebc3db8d6b81f44684fdaaf9617ded5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healthCanvas: {fileID: 0}
   healthText: {fileID: 4789724911390540972}
   healthBar: {fileID: 6182731663527620543}
   monsterName: {fileID: 6527264998418020141}
@@ -205,6 +206,7 @@ MonoBehaviour:
     damage: 3
     loots:
     - {fileID: 6855602316083173638, guid: 34b669ddf36b3f54f90da59d18a0ac19, type: 3}
+    landType: 0
   curHealth: 0
   strength: 1
   speed: 0.5
@@ -217,6 +219,8 @@ MonoBehaviour:
   followRange: 0.7
   attackRange: 0.4
   damageEffect: {fileID: 2452045691475815555, guid: 8b4be493338d5a34da040a702f26dbb1, type: 3}
+  playerDamage: 0
+  punchEffect: {fileID: 6251509432039473687, guid: 86f7f4b538eabd143a23161ae0cbc842, type: 3}
   animator: {fileID: 8973617476862001084}
   sr: {fileID: 8973617476862001085}
 --- !u!54 &4761784460998597660

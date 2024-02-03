@@ -28,7 +28,6 @@ public class MonsterPatrol : MonoBehaviour
     public float minZ;
     public float maxZ;
 
-
     [Header("Attack")]
     [SerializeField] private Transform attackPoint;
     [SerializeField] private float followRange;
@@ -36,6 +35,7 @@ public class MonsterPatrol : MonoBehaviour
     [SerializeField] private GameObject damageEffect;
     [SerializeField] private float playerDamage;
     private string[] clickAttackSounds = new string[3]{ "CharacterAttack", "CharacterAttack2", "CharacterAttack3" };
+    [SerializeField] private GameObject punchEffect;
 
     [Header("--------------------")]
     [SerializeField] private Animator animator;
@@ -45,6 +45,7 @@ public class MonsterPatrol : MonoBehaviour
     private Vector3 originScale;
 
     private bool isHurting = false;
+    private bool isClicking = false;
 
     private void Start()
     {
@@ -88,12 +89,15 @@ public class MonsterPatrol : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                if(!isClicking)
+                    return;
                 if (Camera.main.transform.position == FieldManager.Instance.MonsterVirtualCam.transform.position)
                 {
                     Sequence sequence = DOTween.Sequence();
                     sequence.Append(transform.DOScale(originScale * 1.1f, 0.1f)).Append(transform.DOScale(originScale * 0.9f, 0.1f)).Append(transform.DOScale(originScale * 1f, 0.1f));
                     GetClickerDamaged(playerDamage * 0.2f);
-
+                    GameObject effect = Instantiate(punchEffect, Input.mousePosition, Quaternion.identity, UIManager.Instance.canvases[3].transform);
+                    Destroy(effect, 0.5f);
                     Debug.Log("¿¬Å¸!!");
                 }
             }
@@ -112,7 +116,8 @@ public class MonsterPatrol : MonoBehaviour
 
         if (Dead())
         {
-            FieldManager.Instance.SwitchCamera(false, transform);
+            isClicking = false;
+            FieldManager.Instance.SwitchCamera(isClicking, transform);
             DropLoots();
             gameObject.SetActive(false);
             AudioManager.instance.PlaySound("MonsterDeath2");
@@ -137,13 +142,15 @@ public class MonsterPatrol : MonoBehaviour
             return;
         }
 
-        FieldManager.Instance.SwitchCamera(true, transform);
+        isClicking = true;
+        FieldManager.Instance.SwitchCamera(isClicking, transform);
 
         curHealth -= damage;
 
         if (Dead())
         {
-            FieldManager.Instance.SwitchCamera(false, transform);
+            isClicking = false;
+            FieldManager.Instance.SwitchCamera(isClicking, transform);
             DropLoots();
             gameObject.SetActive(false);
             AudioManager.instance.PlaySound("MonsterDeath2");
