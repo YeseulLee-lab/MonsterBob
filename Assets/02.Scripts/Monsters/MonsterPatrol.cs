@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using UnityEngine.UI;
 public class MonsterPatrol : MonoBehaviour
 {
     [Header("Health Canvas")]
+    [SerializeField] private GameObject healthCanvas;
     [SerializeField] private Text healthText;
     [SerializeField] private Image healthBar;
     [SerializeField] private Text monsterName;
@@ -32,15 +34,17 @@ public class MonsterPatrol : MonoBehaviour
     [SerializeField] private float followRange;
     [SerializeField] private float attackRange;
     [SerializeField] private GameObject damageEffect;
+    [SerializeField] private float playerDamage;
+    private string[] clickAttackSounds = new string[3]{ "CharacterAttack", "CharacterAttack2", "CharacterAttack3" };
 
     [Header("--------------------")]
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sr;
     private Rigidbody rigid;
     private PlayerController player;
+    private Vector3 originScale;
 
     private bool isHurting = false;
-    
 
     private void Start()
     {
@@ -57,6 +61,7 @@ public class MonsterPatrol : MonoBehaviour
         monsterName.text = monster.monsterName;
         curHealth = monster.maxHealth;
         player = FindObjectOfType<PlayerController>();
+        originScale = transform.localScale;
 
         healthText.text = string.Format("{0} / {1}", curHealth, monster.maxHealth);
     }
@@ -68,34 +73,77 @@ public class MonsterPatrol : MonoBehaviour
             return;
         }
 
-        if (PlayerInSight())
+        if (!FieldManager.Instance.isClickerMode)
         {
-            Follow();
+            if (PlayerInSight())
+            {
+                Follow();
+            }
+            else
+            {
+                Patrol();
+            }
         }
         else
         {
-            Patrol();
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (Camera.main.transform.position == FieldManager.Instance.MonsterVirtualCam.transform.position)
+                {
+                    Sequence sequence = DOTween.Sequence();
+                    sequence.Append(transform.DOScale(originScale * 1.1f, 0.1f)).Append(transform.DOScale(originScale * 0.9f, 0.1f)).Append(transform.DOScale(originScale * 1f, 0.1f));
+                    GetClickerDamaged(playerDamage * 0.2f);
+
+                    Debug.Log("연타!!");
+                }
+            }
         }
+    }
+
+    private void GetClickerDamaged(float damage)
+    {
+        damageEffect.GetComponent<DamageEffectPopup>().damage = damage;
+        Instantiate(damageEffect, transform.position, Quaternion.identity);
+
+        AudioManager.instance.PlaySound(clickAttackSounds[UnityEngine.Random.Range(0, 3)]);
+
+        curHealth -= damage;
+        Debug.Log(curHealth);
+
+        if (Dead())
+        {
+            FieldManager.Instance.SwitchCamera(false, transform);
+            DropLoots();
+            gameObject.SetActive(false);
+            AudioManager.instance.PlaySound("MonsterDeath2");
+            Destroy(gameObject, 1f);
+        }
+
+        healthBar.fillAmount = curHealth / monster.maxHealth;
+        healthText.text = string.Format("{0} / {1}", curHealth, monster.maxHealth);
     }
 
     public void GetDamaged(float damage, Vector3 playerDir, float strength)
     {
         StartCoroutine(CoHurt());
-        
         animator.SetTrigger("isDamaged");
         damageEffect.GetComponent<DamageEffectPopup>().damage = damage;
         Instantiate(damageEffect, transform.position, Quaternion.identity);
         KnockBack(playerDir, strength);
+        playerDamage = damage;
 
         if (curHealth <= 0)
         {
             return;
         }
 
+        FieldManager.Instance.SwitchCamera(true, transform);
+
         curHealth -= damage;
 
         if (Dead())
         {
+            FieldManager.Instance.SwitchCamera(false, transform);
             DropLoots();
             gameObject.SetActive(false);
             AudioManager.instance.PlaySound("MonsterDeath2");
@@ -130,12 +178,28 @@ public class MonsterPatrol : MonoBehaviour
     private void DropLoots()
     {
         int randomNumber = UnityEngine.Random.Range(1, 101);
+
         foreach (LootObject loot in monster.loots)
         {
             if (randomNumber <= loot.loot.dropChance)
             {
+                int count = 0;
+                if (loot.loot.dropChance >= 50)
+                {
+                    count = UnityEngine.Random.Range(1, 4);
+                }
+
+                if (loot.loot.dropChance < 50)
+                {
+                    count = UnityEngine.Random.Range(0, 3);
+                }
+                Debug.Log("Loot 확률" + randomNumber + " 개수 :" + count);
                 loot.GetComponent<LootObject>().player = player.gameObject;
-                Instantiate(loot.gameObject, transform.position, Quaternion.identity);
+                
+                for (int i = 0; i < count; i++)
+                {
+                    Instantiate(loot.gameObject, transform.position, Quaternion.identity);
+                }
             }
         }
     }

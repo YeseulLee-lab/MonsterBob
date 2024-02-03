@@ -64,7 +64,10 @@ public class LootObject : MonoBehaviour
                         Destroy(gameObject);
                     }))
                     .Append(UIManager.Instance.canvases[0].GetComponent<MainFieldCanvas>().backPackImage.transform.DOScale(1.2f, 0.08f))
-                    .Append(UIManager.Instance.canvases[0].GetComponent<MainFieldCanvas>().backPackImage.transform.DOScale(1f, 0.08f));
+                    .Append(UIManager.Instance.canvases[0].GetComponent<MainFieldCanvas>().backPackImage.transform.DOScale(1f, 0.08f)).OnComplete(() =>
+                    {
+                        sequence.Kill();
+                    });
 
             
             gameObject.SetActive(false);

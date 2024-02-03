@@ -44,7 +44,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Start()
     {
-        lootInvenDic = new Dictionary<LootData, int>();
+        lootInvenDic = new Dictionary<LootData, int>(inventoryCapacity);
     }
 
     public void GetLoots(LootData loot)
@@ -54,24 +54,13 @@ public class InventoryManager : MonoBehaviour
             return;
         }
 
-        if (lootInvenDic.Count <= 0)
+        if (lootInvenDic.ContainsKey(loot))
         {
-            lootInvenDic.Add(loot, 1);
+            lootInvenDic[loot]++;
         }
         else
         {
-            foreach (KeyValuePair<LootData, int> pair in lootInvenDic)
-            {
-                if (pair.Key.sprite.name == loot.sprite.name)
-                {
-                    lootInvenDic[pair.Key]++;
-                }
-                else
-                {
-                    lootInvenDic.Add(loot, 1);
-                }
-                break;
-            }
+            lootInvenDic.Add(loot, 1);
         }
 
         fieldInventory.GetItem(loot);

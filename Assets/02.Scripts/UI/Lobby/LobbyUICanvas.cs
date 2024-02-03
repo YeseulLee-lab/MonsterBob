@@ -8,7 +8,8 @@ public class LobbyUICanvas : MonoBehaviour
     [SerializeField] private AudioClip lobbyBGM;
     public GameObject mapCanvas;
     public GameObject lobbyMenuCanvas;
-    public GameObject bagCanvas;
+    public GameObject cookCanvas;
+    public GameObject bookCanvas;
 
     private void Start()
     {

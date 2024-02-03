@@ -110,5 +110,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15bcbfa62c9c3364cb14aa5a979e1127, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loot: {fileID: 11400000, guid: bb63bbabaa046fd40b99f68281c114d8, type: 2}
+  loot: {fileID: 11400000, guid: 180b024666442594db1e449c21f76341, type: 2}
   player: {fileID: 0}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6a52a327e25d45bc3cdcd52c97474, type: 3}
   m_Name: FlowerPigLootData
   m_EditorClassIdentifier: 
-  uid: 0
+  uid: 1
   sprite: {fileID: -6475196623511870805, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
   lootName: "\uAF43\uB4F1\uC2EC"
   desc: "\uC0B4\uC0B4 \uB179\uB294 \uB3FC\uC9C0 \uBD80\uC704\uC774\uB2E4."

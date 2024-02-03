@@ -16,7 +16,6 @@ public class StartCanvas : MonoBehaviour
     private void Start()
     {
         backgroundButton.onClick.AddListener(BackgroundStart);
-        AudioManager.instance.PlaySound("LogoPop");
         AudioManager.instance.PlayMusic(startBGM, 0.5f);
     }
 

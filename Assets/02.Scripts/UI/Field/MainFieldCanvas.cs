@@ -42,6 +42,9 @@ public class MainFieldCanvas : MonoBehaviour
     {
         if (isTimerOn)
         {
+            if(FieldManager.Instance.isClickerMode)
+                return;
+
             if (timerCount > 0)
             {
                 timerCount -= Time.deltaTime;

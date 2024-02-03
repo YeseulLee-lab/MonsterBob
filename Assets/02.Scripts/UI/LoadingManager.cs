@@ -35,6 +35,8 @@ public class LoadingManager : MonoBehaviour
             return;
         }
         DontDestroyOnLoad(this.gameObject);
+
+        LoadNextScene("01.Start");
     }
     #endregion
 
@@ -43,7 +45,10 @@ public class LoadingManager : MonoBehaviour
 
     public void LoadNextScene(string sceneName)
     {
-        SceneManager.LoadScene("00.Loading");
+        if (SceneManager.GetActiveScene().name != "00.Loading")
+        {
+            SceneManager.LoadScene("00.Loading");
+        }
         Time.timeScale = 1;
         StartCoroutine(CoLoadScene(sceneName));
     }
@@ -55,7 +60,7 @@ public class LoadingManager : MonoBehaviour
         AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(sceneName);
         while (!asyncOperation.isDone)
         {
-            progressText.text = "Loading " + (asyncOperation.progress * 100) + "%";
+            progressText.text = "Loading " + Mathf.Round(asyncOperation.progress * 100) + "%";
             yield return null;
         }
     }

@@ -16,4 +16,4 @@ MonoBehaviour:
   sprite: {fileID: -4631895070182396429, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
   lootName: "\uBCA0\uC774\uCEE8"
   desc: "\uD754\uD558\uC9C0\uB9CC \uB9DB\uC788\uB294 \uB3FC\uC9C0\uACE0\uAE30\uC774\uB2E4."
-  dropChance: 70
+  dropChance: 100

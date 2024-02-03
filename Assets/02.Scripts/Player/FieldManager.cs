@@ -21,14 +21,23 @@ public class FieldManager : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private CinemachineVirtualCamera virtualCam;
-    public Camera cam;
+    [SerializeField] private CinemachineVirtualCamera monsterVirtualCam;
+
+    public CinemachineVirtualCamera MonsterVirtualCam
+    {
+        get
+        {
+            return monsterVirtualCam;
+        }
+    }
 
     [Header("MonsterSpawn")]
     [SerializeField] private MonsterPatrol[] monsters;
     private Dictionary<MonsterPatrol, int> spawnedMonsters;
     [SerializeField] private int spawnMaxCount;
     [SerializeField] private int eachSpawnMaxCount;
-    
+
+    public bool isClickerMode = false;
 
     public enum PlayerState
     {
@@ -44,15 +53,35 @@ public class FieldManager : MonoBehaviour
 
     private void Start()
     {
-        cam = Camera.main;
-
         SpawnMonster();
     }
 
     public void SetCameraPOV(float pov, float duration)
     {
-        virtualCam.m_Lens.FieldOfView = pov;
-        //DOVirtual.Float(virtualCam.m_Lens.FieldOfView, pov, duration, null);
+        //virtualCam.m_Lens.FieldOfView = pov;
+        DOVirtual.Float(virtualCam.m_Lens.FieldOfView, pov, duration, (value) =>
+        {
+            virtualCam.m_Lens.FieldOfView = value;
+        });
+    }
+
+    public void SwitchCamera(bool isAttacking, Transform target)
+    {
+        if (isAttacking)
+        {
+            virtualCam.gameObject.SetActive(false);
+            monsterVirtualCam.gameObject.SetActive(true);
+            monsterVirtualCam.m_LookAt = target;
+            monsterVirtualCam.m_Follow = target;
+            UIManager.Instance.SetClickerModeCanvas();
+        }
+        else
+        {
+            virtualCam.gameObject.SetActive(true);
+            monsterVirtualCam.gameObject.SetActive(false);
+            UIManager.Instance.ExitClickerModeCanvas();
+        }
+        isClickerMode = isAttacking;
     }
 
     public void SpawnMonster()

@@ -9,7 +9,8 @@ public class LobbyMenuCanvas : MonoBehaviour
 
     [Header("Buttons")]
     [SerializeField] private Button playButton;
-    [SerializeField] private Button bagButton;
+    [SerializeField] private Button cookButton;
+    [SerializeField] private Button bookButton;
 
 
     private void Start()
@@ -19,11 +20,15 @@ public class LobbyMenuCanvas : MonoBehaviour
             AudioManager.instance.PlaySound("OpenMap");
             lobbyUICanvas.mapCanvas.SetActive(true);
         });
-
-        bagButton.onClick.AddListener(delegate
+        cookButton.onClick.AddListener(delegate
         {
             AudioManager.instance.PlaySound("ButtonClick2");
-            lobbyUICanvas.bagCanvas.SetActive(true);
+            lobbyUICanvas.cookCanvas.SetActive(true);
+        });
+        bookButton.onClick.AddListener(delegate
+        {
+            AudioManager.instance.PlaySound("ButtonClick2");
+            lobbyUICanvas.bookCanvas.SetActive(true);
         });
     }
 }

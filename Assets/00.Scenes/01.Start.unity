@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 35134048}
   - component: {fileID: 35134047}
   - component: {fileID: 35134049}
+  - component: {fileID: 35134050}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -218,6 +219,102 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!82 &35134050
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35134045}
+  m_Enabled: 0
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 20216535b770533459c8a731e9693033, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &519378211
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,10 +916,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e66b24315478db849b8a9ad501b7fc0d, type: 3}
-    m_FontSize: 20
+    m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
+    m_MinSize: 0
     m_MaxSize: 40
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -916,7 +1013,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundGroups:
   - groupID: CharacterAttack
-    audioClip: {fileID: 8300000, guid: 51450955c2e5b59409a7b01f1110cc0e, type: 3}
+    audioClip: {fileID: 8300000, guid: ab140ab4b3bffb14681d3d2691f76d67, type: 3}
+  - groupID: CharacterAttack2
+    audioClip: {fileID: 8300000, guid: f95af8d7c8ac7034e87fb62680274522, type: 3}
+  - groupID: CharacterAttack3
+    audioClip: {fileID: 8300000, guid: 3cb2d52425e1316498ab1fd84a446ddc, type: 3}
   - groupID: LogoPop
     audioClip: {fileID: 8300000, guid: 20216535b770533459c8a731e9693033, type: 3}
   - groupID: LowPop
@@ -928,10 +1029,14 @@ MonoBehaviour:
   - groupID: MonsterDeath2
     audioClip: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   - groupID: UIClose
-    audioClip: {fileID: 8300000, guid: 3a96d2770cb92424c8ed5c36b3cf081c, type: 3}
+    audioClip: {fileID: 8300000, guid: 5e9a6df7edf17574fbc0fc4db9d0ff4b, type: 3}
   - groupID: ButtonClick2
     audioClip: {fileID: 8300000, guid: 5c94270b146f314489ee42d2a2ecab99, type: 3}
-  - groupID: ButtonClick3
-    audioClip: {fileID: 8300000, guid: 6fb68096a929f4045b2460288390a734, type: 3}
+  - groupID: SelectLand
+    audioClip: {fileID: 8300000, guid: 270f95809c786b6429abd21d163b0006, type: 3}
   - groupID: OpenMap
-    audioClip: {fileID: 8300000, guid: b813525b4f18d85408a3fec8f57778c0, type: 3}
+    audioClip: {fileID: 8300000, guid: 81a23c2b42b139f4aa2d5788f796be22, type: 3}
+  - groupID: Swipe
+    audioClip: {fileID: 8300000, guid: 30fa1ce6210136c449025b8273300472, type: 3}
+  - groupID: CharacterAttack0
+    audioClip: {fileID: 8300000, guid: 32f2e9fae551f4b4ca634059ebbf6b1f, type: 3}

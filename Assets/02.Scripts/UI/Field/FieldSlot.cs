@@ -2,20 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FieldSlot : MonoBehaviour
+public class FieldSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public Image itemImage;
     public Text itemCountText;
     public int itemCount;
     public LootData loot;
-
-    public UnityAction lobbyInvenSlotAction;
-    public UnityAction fieldInvenSlotAction;
-
-    [SerializeField] private BagCanvas bagCanvas;
+    public GameObject lootNameObject;
+    public Text lootNameText;
 
     private void Start()
     {
@@ -24,20 +22,23 @@ public class FieldSlot : MonoBehaviour
             itemImage.gameObject.SetActive(false);
             itemCountText.text = string.Empty;
         }
+    }
 
-        GetComponent<Button>().onClick.RemoveAllListeners();
-
-        if (SceneManager.GetActiveScene().name == "02.Lobby")
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        if (loot != null)
         {
-            GetComponent<Button>().onClick.AddListener(() => 
-            {
-                if(loot != null)
-                    bagCanvas.SetDetailData(loot.name, loot.desc, loot.sprite);
-            });
+            lootNameObject.SetActive(true);
+
+            lootNameText.text = loot.lootName;
         }
-        else if (SceneManager.GetActiveScene().name == "04.Field")
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+        if (loot != null)
         {
-            GetComponent<Button>().onClick.AddListener(fieldInvenSlotAction);
+            lootNameObject.SetActive(false);
         }
     }
 }

@@ -27,7 +27,7 @@ public class FieldInventory : MonoBehaviour
             }
             else
             {
-                if (slot.itemImage.sprite.name.Equals(loot.sprite.name))
+                if (slot.loot.uid == loot.uid)
                 {
                     slot.itemCount ++;
                     slot.itemCountText.text = slot.itemCount.ToString();

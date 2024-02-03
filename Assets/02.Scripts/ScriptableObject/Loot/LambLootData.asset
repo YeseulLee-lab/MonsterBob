@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6a52a327e25d45bc3cdcd52c97474, type: 3}
   m_Name: LambLootData
   m_EditorClassIdentifier: 
-  uid: 0
+  uid: 2
   sprite: {fileID: -2462604582659173299, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
   lootName: "\uC591\uACE0\uAE30"
   desc: "\uADC0\uC5EC\uC6B4 \uC591\uC5D0\uAC8C\uC11C \uC5BB\uC744 \uC218 \uC788\uB294

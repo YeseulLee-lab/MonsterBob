@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
         isAttacking = true;
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
             return;
-        AudioManager.instance.PlaySound("CharacterAttack");
+        AudioManager.instance.PlaySound("CharacterAttack0");
         animator.SetTrigger("isAttacking");
 
         playerMelee.Attack();
@@ -112,8 +112,8 @@ public class PlayerController : MonoBehaviour
         }
 #elif PLATFORM_ANDROID
 
-        float x = joystick.Horizontal;
-        float y = joystick.Vertical;
+        x = joystick.Horizontal;
+        y = joystick.Vertical;
 #endif
         if (x == 0 && y == 0)
         {

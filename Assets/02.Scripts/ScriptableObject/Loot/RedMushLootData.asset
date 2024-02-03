@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b6a52a327e25d45bc3cdcd52c97474, type: 3}
   m_Name: RedMushLootData
   m_EditorClassIdentifier: 
-  uid: 0
+  uid: 3
   sprite: {fileID: 194779838466877766, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
   lootName: "\uBE68\uAC04\uBC84\uC12F"
   desc: "\uD770\uC0C9 \uC810\uBC15\uC774\uAC00 \uC788\uB294 \uB3C5\uD2B9\uD558\uAC8C

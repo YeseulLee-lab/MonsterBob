@@ -32,6 +32,7 @@ public class MapCanvas : MonoBehaviour
 
     private void OnEnable()
     {
+        mapInfoPanel.transform.localScale = Vector3.zero;
         transform.DOScale(1f, 0.5f).SetEase(Ease.InExpo);
     }
 
@@ -57,19 +58,19 @@ public class MapCanvas : MonoBehaviour
 
         forestLandButton.onClick.AddListener(() => 
         {
-            AudioManager.instance.PlaySound("ButtonClick3");
+            AudioManager.instance.PlaySound("SelectLand");
             landType = LandType.forest;
             SetMapInfoPanel(landType);
         });
         skyLandButton.onClick.AddListener(() =>
         {
-            AudioManager.instance.PlaySound("ButtonClick3");
+            AudioManager.instance.PlaySound("SelectLand");
             landType = LandType.sky;
             SetMapInfoPanel(landType);
         });
         seaLandButton.onClick.AddListener(() =>
         {
-            AudioManager.instance.PlaySound("ButtonClick3");
+            AudioManager.instance.PlaySound("SelectLand");
             landType = LandType.sea;
             SetMapInfoPanel(landType);
         });
