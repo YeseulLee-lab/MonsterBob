@@ -22,12 +22,21 @@ public class FieldManager : MonoBehaviour
     [Header("Camera")]
     [SerializeField] private CinemachineVirtualCamera virtualCam;
     [SerializeField] private CinemachineVirtualCamera monsterVirtualCam;
+    [SerializeField] private Camera cam;
 
     public CinemachineVirtualCamera MonsterVirtualCam
     {
         get
         {
             return monsterVirtualCam;
+        }
+    }
+
+    public Camera Cam
+    {
+        get
+        {
+            return cam;
         }
     }
 

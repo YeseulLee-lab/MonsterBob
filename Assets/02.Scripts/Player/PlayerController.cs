@@ -37,6 +37,8 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            if(FieldManager.Instance.isClickerMode)
+                return;
             FieldManager.Instance.playerState = FieldManager.PlayerState.AttackSword;
         }
 
@@ -68,6 +70,7 @@ public class PlayerController : MonoBehaviour
 #endif
                 animator.SetFloat("deltaX", Mathf.Abs(rb.velocity.x));
                 animator.SetFloat("deltaY", Mathf.Abs(rb.velocity.z));
+                isAttacking = false;
                 break;
             case FieldManager.PlayerState.Dead:
                 animator.SetBool("isDead", true);

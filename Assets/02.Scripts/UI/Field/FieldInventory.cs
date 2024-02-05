@@ -12,7 +12,7 @@ public class FieldInventory : MonoBehaviour
         InventoryManager.Instance.fieldInventory = this;
     }
 
-    public void GetItem(LootData loot)
+    public void SetItem(LootData loot)
     {
         foreach (FieldSlot slot in fieldSlots)
         {

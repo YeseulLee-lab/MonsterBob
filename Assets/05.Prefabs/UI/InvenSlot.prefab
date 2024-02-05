@@ -126,10 +126,10 @@ RectTransform:
   m_Father: {fileID: 6270344997318710445}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 8}
-  m_SizeDelta: {x: -60, y: -60}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 6}
+  m_SizeDelta: {x: 110, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5828263181708630677
 CanvasRenderer:
@@ -359,7 +359,6 @@ MonoBehaviour:
   loot: {fileID: 0}
   lootNameObject: {fileID: 7463996989909127381}
   lootNameText: {fileID: 1889636492923599208}
-  cookCanvas: {fileID: 0}
 --- !u!114 &2542704673613509190
 MonoBehaviour:
   m_ObjectHideFlags: 0

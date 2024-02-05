@@ -43,18 +43,41 @@ public class CookCanvas : MonoBehaviour
                 gameObject.SetActive(false);
             });
         });
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].Refresh = () =>
+            {
+                SetData();
+            };
+        }
     }
 
     private void SetData()
     {
-        int i = 0;
-        foreach (KeyValuePair<LootData, int> pair in InventoryManager.Instance.lootInvenDic)
+        if (InventoryManager.Instance.lootInvenDic.Count == 0)
         {
-            slots[i].loot = pair.Key;
-            slots[i].itemImage.gameObject.SetActive(true);
-            slots[i].itemImage.sprite = pair.Key.sprite;
-            slots[i].itemCountText.text = pair.Value.ToString();
-            i++;
+            for (int i = 0; i < slots.Length; i++)
+            {
+                slots[i].loot = null;
+                slots[i].itemImage.gameObject.SetActive(false);
+                slots[i].itemImage.sprite = null;
+                slots[i].itemCountText.text = string.Empty;
+                slots[i].itemCount = 0;
+            }
+        }
+        else
+        {
+            int i = 0;
+            foreach (KeyValuePair<LootData, int> pair in InventoryManager.Instance.lootInvenDic)
+            {
+                slots[i].loot = pair.Key;
+                slots[i].itemImage.gameObject.SetActive(true);
+                slots[i].itemImage.sprite = pair.Key.sprite;
+                slots[i].itemCountText.text = pair.Value.ToString();
+                slots[i].itemCount = pair.Value;
+                i++;
+            }
         }
     }
 }

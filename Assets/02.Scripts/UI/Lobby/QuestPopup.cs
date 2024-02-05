@@ -10,6 +10,8 @@ public class QuestPopup : MonoBehaviour
     [SerializeField] private Button questButton;
     [SerializeField] private RectTransform questPanel;
 
+    [SerializeField] private QuestUnit[] questUnits;
+
     private void Start()
     {
         questButton.onClick.AddListener(delegate

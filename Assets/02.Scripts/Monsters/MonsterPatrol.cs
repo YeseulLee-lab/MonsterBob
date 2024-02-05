@@ -91,7 +91,7 @@ public class MonsterPatrol : MonoBehaviour
             {
                 if(!isClicking)
                     return;
-                if (Camera.main.transform.position == FieldManager.Instance.MonsterVirtualCam.transform.position)
+                if(Vector3.Distance(FieldManager.Instance.Cam.transform.position, FieldManager.Instance.MonsterVirtualCam.transform.position) < 0.2f)
                 {
                     Sequence sequence = DOTween.Sequence();
                     sequence.Append(transform.DOScale(originScale * 1.1f, 0.1f)).Append(transform.DOScale(originScale * 0.9f, 0.1f)).Append(transform.DOScale(originScale * 1f, 0.1f));

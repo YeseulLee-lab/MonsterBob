@@ -63,6 +63,22 @@ public class InventoryManager : MonoBehaviour
             lootInvenDic.Add(loot, 1);
         }
 
-        fieldInventory.GetItem(loot);
+        fieldInventory.SetItem(loot);
+    }
+
+    public void UseLoots(LootData loot)
+    {
+        if (lootInvenDic.ContainsKey(loot))
+        {
+            lootInvenDic[loot] --;
+        }
+    }
+
+    public void RemoveLoots(LootData loot)
+    {
+        if (lootInvenDic.ContainsKey(loot))
+        {
+            lootInvenDic.Remove(loot);
+        }
     }
 }

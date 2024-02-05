@@ -25,6 +25,8 @@ public class MainFieldCanvas : MonoBehaviour
     {
         attackButton.onClick.AddListener(delegate
         {
+            if(FieldManager.Instance.isClickerMode)
+                return;
             FieldManager.Instance.playerState = FieldManager.PlayerState.AttackSword;
         });
 
