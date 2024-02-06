@@ -63,7 +63,8 @@ public class InventoryManager : MonoBehaviour
             lootInvenDic.Add(loot, 1);
         }
 
-        fieldInventory.SetItem(loot);
+        if(fieldInventory != null)
+            fieldInventory.SetItem(loot);
     }
 
     public void UseLoots(LootData loot)

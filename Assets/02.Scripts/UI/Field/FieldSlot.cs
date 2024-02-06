@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class FieldSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [Header("Field Slot Data")]
     public Image itemImage;
     public Text itemCountText;
     public int itemCount;
@@ -15,10 +16,13 @@ public class FieldSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     public GameObject lootNameObject;
     public Text lootNameText;
 
+    [Header("Item Drag")]
     [SerializeField] private Transform itemDragParent;
     private Vector3 originItemPos;
     private Vector2 originItemScale;
 
+    [Header("Send Data")]
+    [SerializeField] private CookCanvas cookCanvas;
     public UnityAction Refresh;
 
     private void Start()
@@ -54,6 +58,13 @@ public class FieldSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
             return;
         if (loot != null)
         {
+            cookCanvas.selectedLoot = loot;
+
+            cookCanvas.OnCooker = () =>
+            {
+                DropOnCooker();
+            };
+
             itemImage.raycastTarget = false;
             originItemScale = itemImage.GetComponent<RectTransform>().sizeDelta;
             originItemPos = itemImage.transform.position;
@@ -74,32 +85,25 @@ public class FieldSlot : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, 
     {
         if (SceneManager.GetActiveScene().name != "02.Lobby")
             return;
-        DropOnCooker();
+        itemImage.GetComponent<RectTransform>().sizeDelta = originItemScale;
+        itemImage.transform.position = originItemPos;
+        itemImage.transform.SetParent(transform);
+        itemImage.transform.SetAsFirstSibling();
+        cookCanvas.selectedLoot = null;
         Refresh();
     }
 
     public void DropOnCooker()
     {
-        if (loot != null)
+        if (itemCount > 1)
         {
-            if (itemCount > 1)
-            {
-                itemCount--;
-                InventoryManager.Instance.UseLoots(loot);
-                itemImage.GetComponent<RectTransform>().sizeDelta = originItemScale;
-                itemImage.transform.position = originItemPos;
-                itemImage.transform.SetParent(transform);
-                itemImage.transform.SetAsFirstSibling();
-            }
-            else if (itemCount <= 1)
-            {
-                itemImage.GetComponent<RectTransform>().sizeDelta = originItemScale;
-                itemImage.transform.position = originItemPos;
-                itemImage.transform.SetParent(transform);
-                itemImage.transform.SetAsFirstSibling();
-                InventoryManager.Instance.RemoveLoots(loot);
-            }
-            itemImage.raycastTarget = true;
+            itemCount--;
+            InventoryManager.Instance.UseLoots(loot);
         }
+        else if (itemCount <= 1)
+        {
+            InventoryManager.Instance.RemoveLoots(loot);
+        }
+        itemImage.raycastTarget = true;
     }
 }

@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class CookCanvas : MonoBehaviour
@@ -12,6 +13,9 @@ public class CookCanvas : MonoBehaviour
     [SerializeField] private FieldSlot[] slots;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button prevButton;
+
+    public LootData selectedLoot;
+    public UnityAction OnCooker;
 
     private void OnEnable()
     {
@@ -53,20 +57,18 @@ public class CookCanvas : MonoBehaviour
         }
     }
 
-    private void SetData()
+    public void SetData()
     {
-        if (InventoryManager.Instance.lootInvenDic.Count == 0)
+        for (int i = 0; i < slots.Length; i++)
         {
-            for (int i = 0; i < slots.Length; i++)
-            {
-                slots[i].loot = null;
-                slots[i].itemImage.gameObject.SetActive(false);
-                slots[i].itemImage.sprite = null;
-                slots[i].itemCountText.text = string.Empty;
-                slots[i].itemCount = 0;
-            }
+            slots[i].loot = null;
+            slots[i].itemImage.gameObject.SetActive(false);
+            slots[i].itemImage.sprite = null;
+            slots[i].itemCountText.text = string.Empty;
+            slots[i].itemCount = 0;
         }
-        else
+
+        if (InventoryManager.Instance.lootInvenDic.Count > 0)
         {
             int i = 0;
             foreach (KeyValuePair<LootData, int> pair in InventoryManager.Instance.lootInvenDic)
