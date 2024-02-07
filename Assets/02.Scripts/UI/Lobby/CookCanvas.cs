@@ -13,6 +13,8 @@ public class CookCanvas : MonoBehaviour
     [SerializeField] private FieldSlot[] slots;
     [SerializeField] private Button nextButton;
     [SerializeField] private Button prevButton;
+    [Header("Cooks")]
+    public CookData[] cookDatas;
 
     public LootData selectedLoot;
     public UnityAction OnCooker;

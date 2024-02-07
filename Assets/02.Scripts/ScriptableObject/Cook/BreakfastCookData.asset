@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 336f5c1de409d7141a42331cdfdb3252, type: 3}
-  m_Name: SteakCookData
+  m_Name: BreakfastCookData
   m_EditorClassIdentifier: 
   uid: 0
-  sprite: {fileID: 21300000, guid: e1c35225debfd364591e797cfb03d083, type: 3}
+  sprite: {fileID: 21300000, guid: d586dc1968eee8747a1e31dd3d711ba5, type: 3}
   cookName: "\uAF43\uB4F1\uC2EC \uC2A4\uD14C\uC774\uD06C"
   desc: "\uC0B4\uC0B4 \uB179\uB294 \uAF43\uB4F1\uC2EC \uC2A4\uD14C\uC774\uD06C\uC774\uB2E4."
   cookTime: 120
@@ -21,4 +21,6 @@ MonoBehaviour:
   - lootdata: {fileID: 11400000, guid: 8c140b1cdad138d4aa552859cfbc36f3, type: 2}
     count: 2
   - lootdata: {fileID: 11400000, guid: bb63bbabaa046fd40b99f68281c114d8, type: 2}
+    count: 1
+  - lootdata: {fileID: 11400000, guid: ec5ee0311f45d7248b78180bb0cb1bb3, type: 2}
     count: 1
