@@ -7831,7 +7831,8 @@ MonoBehaviour:
   prevButton: {fileID: 1975485403}
   cookDatas:
   - {fileID: 11400000, guid: 3445a62f0a4632d47803c5f992daeb5f, type: 2}
-  - {fileID: 11400000, guid: c0aae57615c4f4147a4bd88e16103685, type: 2}
+  - {fileID: 11400000, guid: 5059784f6ba0a8f49800aaff5fba8be3, type: 2}
+  - {fileID: 11400000, guid: b103a94cefba10449afe4f414c754f93, type: 2}
   selectedLoot: {fileID: 0}
 --- !u!1 &1156395670
 GameObject:

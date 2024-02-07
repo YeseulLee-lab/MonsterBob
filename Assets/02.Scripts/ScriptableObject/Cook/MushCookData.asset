@@ -10,13 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 336f5c1de409d7141a42331cdfdb3252, type: 3}
-  m_Name: SteakCookData
+  m_Name: MushCookData
   m_EditorClassIdentifier: 
   uid: 0
-  sprite: {fileID: 21300000, guid: dab39113be3e18443b8a07b27d5f86a8, type: 3}
-  cookName: "\uAF43\uB4F1\uC2EC \uC2A4\uD14C\uC774\uD06C"
-  desc: "\uC0B4\uC0B4 \uB179\uB294 \uAF43\uB4F1\uC2EC \uC2A4\uD14C\uC774\uD06C\uC774\uB2E4."
+  sprite: {fileID: 368766777929289254, guid: c63f513a62c723748b1ee017a2ce5bda, type: 3}
+  cookName: "\uBC84\uC12F \uBCF6\uC74C"
+  desc: "\uC0C8\uBE68\uAC04 \uBC84\uC12F\uC758 \uB3C5\uC774 \uB4E4\uC5C8\uC744 \uAC83
+    \uAC19\uC544\uC11C \uC798 \uC190\uC9C8\uD574\uC11C \uC694\uB9AC\uD588\uB2E4."
   cookTime: 120
   needLoots:
-  - lootdata: {fileID: 11400000, guid: 8c140b1cdad138d4aa552859cfbc36f3, type: 2}
+  - lootdata: {fileID: 11400000, guid: 180b024666442594db1e449c21f76341, type: 2}
     count: 2

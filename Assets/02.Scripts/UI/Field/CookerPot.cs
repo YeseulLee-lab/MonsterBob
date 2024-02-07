@@ -154,6 +154,13 @@ public class CookerPot : MonoBehaviour, IDropHandler
         resetButton.onClick.RemoveAllListeners();
         resetButton.onClick.AddListener(ThrowAway);
         resetButton.GetComponentInChildren<Text>().text = "¹ö¸®±â";
+
+        Cook();
+    }
+
+    private void Cook()
+    {
+
     }
 
     private void ResetCooker()
