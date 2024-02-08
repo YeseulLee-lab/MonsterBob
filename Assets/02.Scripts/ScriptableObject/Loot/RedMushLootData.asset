@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RedMushLootData
   m_EditorClassIdentifier: 
   uid: 3
-  sprite: {fileID: 194779838466877766, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+  sprite: {fileID: -2631762986214876689, guid: 5d3dcac625028554a840828a0ea065c8, type: 3}
   lootName: "\uBE68\uAC04\uBC84\uC12F"
   desc: "\uD770\uC0C9 \uC810\uBC15\uC774\uAC00 \uC788\uB294 \uB3C5\uD2B9\uD558\uAC8C
     \uC0DD\uAE34 \uBE68\uAC04 \uBC84\uC12F. \uB3C5\uC774 \uB4E4\uC5B4\uC788\uC744

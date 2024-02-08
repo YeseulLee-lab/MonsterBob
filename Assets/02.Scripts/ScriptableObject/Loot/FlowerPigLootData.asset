@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: FlowerPigLootData
   m_EditorClassIdentifier: 
   uid: 1
-  sprite: {fileID: -6475196623511870805, guid: 0d897face489ccd478255a03e6f6d48d, type: 3}
+  sprite: {fileID: 21300000, guid: 2150304cd958eeb4391151d390f536e0, type: 3}
   lootName: "\uAF43\uB4F1\uC2EC"
   desc: "\uC0B4\uC0B4 \uB179\uB294 \uB3FC\uC9C0 \uBD80\uC704\uC774\uB2E4."
   dropChance: 100
