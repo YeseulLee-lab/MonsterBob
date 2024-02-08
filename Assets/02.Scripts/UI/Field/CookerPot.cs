@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CookerPot : MonoBehaviour, IDropHandler
@@ -18,11 +19,16 @@ public class CookerPot : MonoBehaviour, IDropHandler
     [SerializeField] private Image cookImage;
     [SerializeField] private Sprite cookEmptySprite;
 
+    [Header("Timer")]
+    [SerializeField] private Text timer;
+    private bool isTimerOn;
+
     [Header("Buttons")]
     [SerializeField] private Button cookButton;
     [SerializeField] private Button resetButton;
 
     private CookData[] cookDatas;
+    private float cookTime;
     
 
     private void Start()
@@ -32,6 +38,34 @@ public class CookerPot : MonoBehaviour, IDropHandler
         resetButton.onClick.AddListener(ResetCooker);
 
         cookDatas = cookCanvas.cookDatas;
+    }
+
+    private void Update()
+    {
+        if (isTimerOn)
+        {
+            if (cookTime > 0)
+            {
+                cookTime -= Time.deltaTime;
+                TimerUpdate(cookTime);
+            }
+            else
+            {
+                cookTime = 0;
+                isTimerOn = false;
+                FinishCook();
+            }
+        }
+    }
+
+    private void TimerUpdate(float currentTime)
+    {
+        currentTime += 1;
+
+        float minutes = Mathf.FloorToInt(currentTime / 60);
+        float seconds = Mathf.FloorToInt(currentTime % 60);
+
+        timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
     }
 
     public void OnDrop(PointerEventData eventData)
@@ -129,6 +163,7 @@ public class CookerPot : MonoBehaviour, IDropHandler
                     return false;
             }
             //for문이 끝났다는 것은 모두 있는것. 요리를 찾았으니 참을 반환한다.
+            cookTime = cook.cookTime;
             cookImage.sprite = cook.sprite;
             return true;
         }
@@ -147,20 +182,46 @@ public class CookerPot : MonoBehaviour, IDropHandler
 
     private void OnClickCookButton()
     {
-        cookerAnimator.enabled = true;
+        isTimerOn = true;
+        cookerAnimator.SetBool("isCooking", true);
         clock.gameObject.SetActive(true);
 
         cookButton.interactable = false;
         resetButton.onClick.RemoveAllListeners();
         resetButton.onClick.AddListener(ThrowAway);
         resetButton.GetComponentInChildren<Text>().text = "버리기";
-
-        Cook();
     }
 
-    private void Cook()
+    private void FinishCook()
     {
+        cookerAnimator.SetBool("isCooking", false);
+        cookImage.GetComponent<Animator>().SetBool("isFinished", true);
+        clock.gameObject.SetActive(false);
 
+        cookImage.GetComponent<Button>().onClick.AddListener(delegate
+        {
+            cookImage.GetComponent<Animator>().SetBool("isFinished", false);
+            resetButton.onClick.RemoveAllListeners();
+            resetButton.onClick.AddListener(ResetCooker);
+            resetButton.GetComponentInChildren<Text>().text = "초기화";
+            lootList.Clear();
+            needLootList.Clear();
+            for (int i = 0; i < lootImageArr.Length; i++)
+            {
+                lootImageArr[i].enabled = false;
+                lootImageArr[i].sprite = null;
+            }
+
+            Transform originParent = cookImage.transform.parent;
+            cookImage.transform.SetParent(cookCanvas.slotText.transform);
+            cookImage.transform.DOLocalMove(Vector3.zero, 0.5f).OnComplete(() =>
+            {
+                cookImage.sprite = cookEmptySprite;
+                cookImage.transform.SetParent(originParent);
+                cookImage.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                cookImage.GetComponent<Button>().onClick.RemoveAllListeners();
+            });
+        });
     }
 
     private void ResetCooker()
@@ -188,6 +249,7 @@ public class CookerPot : MonoBehaviour, IDropHandler
     {
         lootList.Clear();
         needLootList.Clear();
+        isTimerOn = false;
         cookImage.sprite = cookEmptySprite;
         cookButton.interactable = false;
 
@@ -203,6 +265,7 @@ public class CookerPot : MonoBehaviour, IDropHandler
 
         clock.gameObject.SetActive(false);
 
-        cookerAnimator.enabled = false;
+        cookerAnimator.SetBool("isCooking", false);
+        cookImage.GetComponent<Animator>().SetBool("isFinished", false);
     }
 }
