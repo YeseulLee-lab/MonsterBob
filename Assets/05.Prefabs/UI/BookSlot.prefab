@@ -214,6 +214,7 @@ MonoBehaviour:
   itemImage: {fileID: 1734852404310894526}
   loot: {fileID: 0}
   bookCanvas: {fileID: 0}
+  noDataImage: {fileID: 5699103520103960187}
 --- !u!95 &7006884950494163243
 Animator:
   serializedVersion: 3

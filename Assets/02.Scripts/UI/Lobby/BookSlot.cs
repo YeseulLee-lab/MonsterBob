@@ -9,6 +9,7 @@ public class BookSlot : MonoBehaviour
     public LootData loot;
 
     [SerializeField] private BookCanvas bookCanvas;
+    [SerializeField] private Image noDataImage;
 
     private void Start()
     {
@@ -31,11 +32,13 @@ public class BookSlot : MonoBehaviour
         if (loot != null)
         {
             itemImage.sprite = loot.sprite;
+            noDataImage.gameObject.SetActive(false);
             itemImage.gameObject.SetActive(true);
         }
         else
         {
             itemImage.sprite = null;
+            noDataImage.gameObject.SetActive(true);
             itemImage.gameObject.SetActive(false);
         }
     }

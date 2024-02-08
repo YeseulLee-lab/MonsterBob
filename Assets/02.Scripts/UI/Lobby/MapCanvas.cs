@@ -23,6 +23,7 @@ public class MapCanvas : MonoBehaviour
     [SerializeField] private Button enterButton;
     [SerializeField] private MonsterPatrol[] monsters;
     [SerializeField] private MonsterSlot[] monsterSlots;
+    [SerializeField] private CanvasGroup useEnergyObject;
 
     public enum LandType
     {
@@ -112,7 +113,15 @@ public class MapCanvas : MonoBehaviour
 
     private void OnClickEnter()
     {
-        //출발 효과음
-        LoadingManager.Instance.LoadNextScene("04.Field");
+        InventoryManager.Instance.SetEnergy(-10);
+
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(useEnergyObject.DOFade(1f, 0.3f))
+            .Join(useEnergyObject.transform.DOLocalMoveY(240f, 0.3f))
+            .Append(useEnergyObject.DOFade(0f, 0.3f)).OnComplete(() =>
+            {
+                //출발 효과음
+                LoadingManager.Instance.LoadNextScene("04.Field");
+            });
     }
 }

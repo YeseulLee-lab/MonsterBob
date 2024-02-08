@@ -12,6 +12,10 @@ public class LobbyMenuCanvas : MonoBehaviour
     [SerializeField] private Button cookButton;
     [SerializeField] private Button bookButton;
 
+    [Header("¿Á»≠")]
+    [SerializeField] private Text eneryText;
+    [SerializeField] private Text crystalText;
+
 
     private void Start()
     {
@@ -30,5 +34,8 @@ public class LobbyMenuCanvas : MonoBehaviour
             AudioManager.instance.PlaySound("ButtonClick2");
             lobbyUICanvas.bookCanvas.SetActive(true);
         });
+
+        eneryText.text = InventoryManager.Instance.EnergyCount.ToString();
+        crystalText.text = InventoryManager.Instance.CrystalCount.ToString();
     }
 }
