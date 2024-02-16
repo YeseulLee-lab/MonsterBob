@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "632613228060",
+    "project_id": "monsterbob-6f3b4",
+    "storage_bucket": "monsterbob-6f3b4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632613228060:android:bc556dbcbe36e0473259d9",
+        "android_client_info": {
+          "package_name": "com.Yesman.MonsterBOB"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632613228060-qnfb41c0j5a3mfmjs6v6k0j0kfk1s069.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Yesman.MonsterBOB",
+            "certificate_hash": "f6057131a4b9481c3f1289e61c3358de593e4c26"
+          }
+        },
+        {
+          "client_id": "632613228060-a0921uu5fuudajttkotk6i6kpmep3s4o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDux7XYTgFBv2hSzHUeWceBkCSLEOYA9zY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632613228060-a0921uu5fuudajttkotk6i6kpmep3s4o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
