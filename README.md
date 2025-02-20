@@ -1,5 +1,5 @@
 ## 🍚👾Monster Bob👾🍚
-RPG 수집게임 Monster Bob입니다.
+RPG Collection Game 'Monster Bob'
 <br><br>
 <img width="150" alt="AppIcon" src="https://github.com/user-attachments/assets/1f7f5343-f67d-4e6e-a5a9-01e625f38cca">
 
@@ -9,24 +9,24 @@ RPG 수집게임 Monster Bob입니다.
 <img width="500" alt="Game" src="https://github.com/user-attachments/assets/ca116dc3-4289-44d2-a0e9-8d78aa81a327">
 
 
-## 게임 소개🎮
-몬스터로부터 전리품을 얻어 요리를 해보자!
+## Game Introduction🎮
+Let’s collect loot from monsters and cook some dishes!
 
-## 기술 스택⛏
-개발 환경: Unity 2021.1.4f1, Visual Studio 2022, C# <br>
-버전 관리: GitHub <br>
-플랫폼: 모바일 <br>
-장르: RPG. 수집
+## Tech Stack⛏
+Development Environment: Unity 2021.1.4f1, Visual Studio 2022, C# <br>
+Version Control: GitHub <br>
+Platform: Mobile <br>
+Genre: RPG, Collection
 
-## 개발 기간📅
-2024.01 - 2024.02
+## Development Period📅
+January 2024 - February 2024
 
-## 개발 인원👤👥👤
-클라이언트 개발(1)<br>
+## Team Size👤👥👤
+Client Development: 1<br>
 
-## 게임 소개 유튜브 링크📼
+## Game Introduction YouTube Link📼
 [https://youtube.com/playlist?list=PLS_UeeF7-cEAjE1tsKMrYwwbj919tuBOY&si=p18VsLSlwkYk0K1o](https://youtu.be/BmaR_rjAsPE)
 
-## 주요 기능
-Cinemachine을 이용한 연출<br>
-비동기적 씬 이동<br>
+## Key Features
+Cinemachine-based cutscene direction <br>
+Asynchronous scene transitions <br>
